@@ -1,7 +1,7 @@
 <form method="POST" name="selected-post-form" class="m-4" action="/post/handle-form-action">
     <h2>My Post</h2>
-    <div>
-        <a href="/me/trash/posts">Go to Trash</a>
+    <div class="d-flex">
+        <a href="/me/trash/posts">Go to Trash ({{deletedCount}})</a>
     </div>
     <div class="my-3 d-flex gap-2">
         <div class="form-check">
@@ -43,11 +43,16 @@
                 <th scope="col">
                     Title
                     <span>
-                        
+                        {{{ sortable 'name' _sort }}}
                     </span>
                 </th>
                 <th scope="col">Description</th>
-                <th scope="col" colspan="3">Create At</th>
+                <th scope="col" colspan="3">
+                    Create At
+                    <span>
+                        {{{ sortable 'createdAt' _sort }}}
+                    </span>
+                </th>
             </tr>
         </thead>
         <tbody>
