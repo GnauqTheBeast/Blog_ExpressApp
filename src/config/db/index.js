@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 function connect() {
-    mongoose.connect('mongodb://127.0.0.1:27017/blog_dev')
+    mongoose.connect(process.env.DB_URL)
         .then(() => console.log('Connected!'))
         .catch(() => console.log('Error!!!'));
 }

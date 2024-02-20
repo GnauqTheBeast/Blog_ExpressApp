@@ -5,7 +5,7 @@ const app = express();
 const methodOverride = require('method-override');
 const morgan = require('morgan');
 const SortMiddleware = require('./app/middlewares/SortMiddleware');
-const port = 3000;
+require('dotenv').config()
 
 const route = require('./routes');
 const db = require('./config/db');
@@ -53,6 +53,6 @@ db.connect();
 // Route 
 route(app);
 
-app.listen(port, () => {
-    console.log(`App listening on port ${port}`);
+app.listen(process.env.PORT, () => {
+    console.log(`App listening`);
 });

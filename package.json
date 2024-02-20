@@ -29,6 +29,7 @@
     "morgan": "^1.10.0"
   },
   "devDependencies": {
+    "dotenv": "^16.4.4",
     "husky": "^8.0.3",
     "lint-staged": "^15.0.2",
     "method-override": "^3.0.0",
